@@ -1,0 +1,12 @@
+---
+- name: Install cifs-utils with apt
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install cifs-utils
+      ansible.builtin.apt:
+        name:
+          - cifs-utils
+        state: latest
+        update_cache: true
